@@ -13,6 +13,7 @@ process.on("uncaughtException", (err) => {
 // Config
 if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({ path: "backend/config/config.env" });
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 }
 
 // Connecting to database
@@ -23,6 +24,9 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+
+// Log the configuration
+console.log("cloudinary config: ", cloudinary.config());
 
 const server = app.listen(process.env.PORT, () => {
   console.log(`Server is working on http://localhost:${process.env.PORT}`);

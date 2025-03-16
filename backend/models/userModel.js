@@ -55,6 +55,7 @@ userSchema.pre("save", async function (next) {
 });
 
 // JWT TOKEN
+// to generate JWT_SECRET key run node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 userSchema.methods.getJWTToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE,

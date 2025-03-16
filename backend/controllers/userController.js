@@ -14,6 +14,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     width: 150,
     crop: "scale",
   });
+  // console.log("cloudinary profile image: ", myCloud);
 
   const { name, email, password } = req.body;
 

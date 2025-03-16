@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const connectDatabase = () => {
   mongoose
     .connect(process.env.DB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      // useNewUrlParser: true, // is a deprecated option
+      // useUnifiedTopology: true, //is a deprecated option
       //useCreateIndex: true, // not supported //https://stackoverflow.com/questions/68958221/mongoparseerror-options-usecreateindex-usefindandmodify-are-not-supported
     })
     .then((data) => {
