@@ -23,10 +23,11 @@ const categories = [
 const Products = ({ match }) => {
   const dispatch = useDispatch();
 
-  const alert = useAlert();
+  const alert = useAlert(),
+    maxPrice = 45000;
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [price, setPrice] = useState([0, 450000]);
+  const [price, setPrice] = useState([0, maxPrice]);
   const [category, setCategory] = useState("");
 
   const [ratings, setRatings] = useState(0);
@@ -84,7 +85,7 @@ const Products = ({ match }) => {
               valueLabelDisplay="auto"
               aria-labelledby="range-slider"
               min={0}
-              max={25000}
+              max={maxPrice}
             />
 
             <Typography>Categories</Typography>
