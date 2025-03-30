@@ -24,7 +24,7 @@ const Products = ({ match }) => {
   const dispatch = useDispatch();
 
   const alert = useAlert(),
-    maxPrice = 45000;
+    maxPrice = 9555000;
 
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0, maxPrice]);
@@ -84,6 +84,7 @@ const Products = ({ match }) => {
               onChange={priceHandler}
               valueLabelDisplay="auto"
               aria-labelledby="range-slider"
+              // style={{ height: "50px", width: "50px" }}
               min={0}
               max={maxPrice}
             />
